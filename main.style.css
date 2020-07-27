@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+@import './fontawesome-free/css/all.css';
+@import './normalize/normalize.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: unset;
+}
+
+html, body { width: 100%; height: 100%; }
+
+body {
+    font-family: 'Baloo 2', cursive;
+    padding: calc(60px + 1rem) 1rem 1rem;
+    background-color: white;
+}
+
+body.dark {
+    color: white;
+    background-color: #333333;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    background-color: inherit;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+header input {
+    width: 100%;
+    max-width: 370px;
+    height: 30px;
+    border: none;
+    background: #7e7e7e10;
+    padding: 0 .5rem;
+    border-radius: 5px 0 0 5px;
+}
+
+header span {
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: turquoise;
+    display: block;
+    text-align: center;
+    line-height: 33px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+header span:hover {
+    background-color: teal;
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+main article {
+    width: 100%;
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border-left: 5px solid;
+    text-transform: capitalize;
+    overflow: hidden;
+}
+
+main h4 {    
+    font-weight: normal;
+}
+
+main article.new {
+    order: 2;
+    border-color: #eee;
+    background-color: #eeeeee35;
+}
+
+main article.shp {
+    order: 1;
+    color: lightgreen;
+    background-color: #90ee9015;
+}
+
+main article.del {
+    order: 3;
+    color: lightcoral;
+    background-color: #f0808015;
+}
