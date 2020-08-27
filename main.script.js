@@ -41,18 +41,25 @@ class ShopList {
         let _article = document.createElement('article');
         _article.className = a_class;
         _article.draggable = true;
+
         _article.ondragstart = (e) => { this.#articleAction(0, e, a_name) };
         _article.ondrag = (e) => { this.#articleAction(1, e, a_name) };
         _article.ondragend = (e) => { this.#articleAction(2, e, a_name) };
 
-        _article.onclick = (e) => { this.#doTheThing(a_name, 'basket') };
-        _article.ondblclick = (e) => { this.#doTheThing(a_name, 'trash') };
+        _article.ontouchstart = (e) => { this.#articleAction(0, e, a_name) };
+        _article.ontouchmove = (e) => { this.#articleAction(1, e, a_name) };
+        _article.ontouchmove = (e) => { this.#articleAction(2, e, a_name) };
+
+        // _article.onclick = (e) => { this.#doTheThing(a_name, 'basket') };
+        // _article.ondblclick = (e) => { this.#doTheThing(a_name, 'trash') };
+
         _article.innerHTML = `<h4>${a_name}</h4>`;
 
         return _article;
     }
 
     #articleAction(action, art, artName) {
+        console.debug('tuyio')
         this.#initialoffsetX = action == 0 ? art.offsetX : this.#initialoffsetX;
         // action == 0 && (document.getElementById('ival').innerText = art.offsetX);
         if (action == 1) {
