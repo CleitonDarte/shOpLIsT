@@ -7,9 +7,7 @@ class ShopList {
             <input id="newArticle" type="text" autofocus placeholder="Novo Item"><span id="addArticle"><i class="fas fa-plus"></i></span>
         </header>
         <main></main>
-        <div id="ival"></div>
-        <div id="val"></div>
-        <div id="fval"></div>`;
+    `;
 
     #initialoffsetX;
     #swipeDiff;
@@ -43,11 +41,12 @@ class ShopList {
         let _article = document.createElement('article');
         _article.className = a_class;
         _article.draggable = true;
-        // _article.ondragstart = (e) => { this.#articleAction(0, e, a_name) };
-        // _article.ondrag = (e) => { this.#articleAction(1, e, a_name) };
-        // _article.ondragend = (e) => { this.#articleAction(2, e, a_name) };
-        _article.onclick = (e) => { this.doTheThing(a_name, 'trash') };
-        _article.ondblclick = (e) => { this.doTheThing(a_name, 'basket') };
+        _article.ondragstart = (e) => { this.#articleAction(0, e, a_name) };
+        _article.ondrag = (e) => { this.#articleAction(1, e, a_name) };
+        _article.ondragend = (e) => { this.#articleAction(2, e, a_name) };
+
+        _article.onclick = (e) => { this.#doTheThing(a_name, 'basket') };
+        _article.ondblclick = (e) => { this.#doTheThing(a_name, 'trash') };
         _article.innerHTML = `<h4>${a_name}</h4>`;
 
         return _article;
