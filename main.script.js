@@ -45,9 +45,10 @@ class ShopList {
         _article.ondragstart = (e) => { this.#articleAction(0, e, a_name) };
         _article.ondrag = (e) => { this.#articleAction(1, e, a_name) };
         _article.ondragend = (e) => { this.#articleAction(2, e, a_name) };
+        
         _article.ontouchstart = (e) => { this.#articleAction(0, e, a_name) };
         _article.ontouchmove = (e) => { this.#articleAction(1, e, a_name) };
-        _article.ontouchmove = (e) => { this.#articleAction(2, e, a_name) };
+        _article.ontouchend = (e) => { this.#articleAction(2, e, a_name) };
 
         // _article.onclick = (e) => { this.#doTheThing(a_name, 'basket') };
         // _article.ondblclick = (e) => { this.#doTheThing(a_name, 'trash') };
